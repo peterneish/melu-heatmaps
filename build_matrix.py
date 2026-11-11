@@ -203,7 +203,8 @@ document.getElementById("app").innerHTML = DS.map(D =>
 const gen = DS.map(D => D.generated).filter(Boolean)[0];
 document.getElementById("credit").innerHTML = "Data: University of Melbourne Herbarium (MELU) via the <a href='https://collections.ala.org.au/public/show/" +
   esc(DS[0].data_resource) + "' target='_blank' rel='noopener'>Atlas of Living Australia</a> (" + esc(DS[0].data_resource) + ")." +
-  (gen ? " Page generated " + esc(gen) + "." : "");
+  (gen ? " Page generated " + esc(gen) + "." : "") +
+  (DS[0].repo ? " <a href='" + esc(DS[0].repo) + "' target='_blank' rel='noopener'>Source code on GitHub</a>." : "");
 </script>
 </body>
 </html>

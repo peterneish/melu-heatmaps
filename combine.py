@@ -11,6 +11,8 @@ from datetime import date
 
 from build_matrix import TEMPLATE
 
+REPO = "https://github.com/peterneish/melu-heatmaps"   # linked from the page footer
+
 
 def load(path, heading):
     m = json.load(open(path, encoding="utf-8"))
@@ -24,6 +26,7 @@ def load(path, heading):
 
 mats = [load("matrix_clean.json", "By genus"), load("matrix_years.json", "By decade")]
 mats[0]["generated"] = date.today().isoformat()
+mats[0]["repo"] = REPO
 os.makedirs("docs", exist_ok=True)
 with open(os.path.join("docs", "index.html"), "w", encoding="utf-8") as f:
     f.write(TEMPLATE.replace("__DATA__", json.dumps(mats)))
