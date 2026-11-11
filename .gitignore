@@ -1,0 +1,9 @@
+__pycache__/
+# API caches (large, rebuildable)
+genus_by_string.json
+year_by_string.json
+genus_collectors.json
+raw_cells.json
+# stand-alone pages written by the individual scripts
+heatmap_clean.html
+heatmap_years.html
